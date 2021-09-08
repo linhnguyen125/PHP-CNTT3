@@ -98,6 +98,11 @@
 	font-weight: 500;
 }
 
+#content video {
+	height: 325px;
+	width: auto;
+}
+
 /* FOOTER */
 #footer {
 	padding: 5px 5px;
