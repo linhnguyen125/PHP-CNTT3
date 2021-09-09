@@ -1,22 +1,6 @@
 <?php
 require('./inc/header.php');
 require('./lib/function_helper.php');
-$s = 0;
-
-
-function sum($x, $n)
-{
-    global $s;
-    for ($i = 1; $i <= $n; $i++) {
-        $s += (pow($x, $i)) / giaiThua($i);
-    }
-    return $s;
-}
-
-if (isset($_POST['submit'])) {
-    $x = $_POST['x'];
-    $n = $_POST['n'];
-}
 ?>
 <div id="wrapper-content">
     <div class="row">
@@ -26,20 +10,21 @@ if (isset($_POST['submit'])) {
                 <p class="bt">Bài làm</p>
                 <hr />
                 <div class="ex">
-                    Đề bài: Nhập vào x, n. Tính tổng biểu thức sau:<br />
-                    <img src="./images/bai3.png" alt="">
+                    Đề bài: Viết chương trình nhập vào một sốgiây sau đó in ra màn hình thời gian dưới dạng giờ:phút:giây <br>
+                    Ví dụ nhập vào 3769 giây thì in ra màn hình dưới dạng: 01:02: 49
                 </div>
                 <p class="text-center do">Giải</p>
                 <div>
                     <form action="" method="POST">
-                        <input type="number" name="x" placeholder="Nhập x ...">
-                        <input type="number" name="n" placeholder="Nhập n ...">
+                        <label for="n">Nhập số nguyên n : </label>
+                        <input type="number" name="n" id="n" placeholder="Nhập n ...">
                         <input type="submit" name='submit' value="Submit">
                     </form>
-                    <br>
-                    <p>Tổng:
-                        <?php if (isset($_POST['submit'])) {
-                            echo sum($x, $n);
+                    <p>
+                        <?php
+                        if (isset($_POST['submit'])) {
+                            $result = validate($_POST['n']);
+                            echo $result;
                         }
                         ?>
                     </p>

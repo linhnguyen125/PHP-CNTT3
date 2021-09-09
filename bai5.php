@@ -1,21 +1,15 @@
 <?php
 require('./inc/header.php');
-require('./lib/function_helper.php');
-$s = 0;
-
-
-function sum($x, $n)
+function check($n)
 {
-    global $s;
-    for ($i = 1; $i <= $n; $i++) {
-        $s += (pow($x, $i)) / giaiThua($i);
+    $sum = 0;
+    for ($i = 1; $i <= $n / 2; $i++) {
+        if ($n % $i == 0) $sum += $i;
     }
-    return $s;
-}
-
-if (isset($_POST['submit'])) {
-    $x = $_POST['x'];
-    $n = $_POST['n'];
+    if ($sum == $n) {
+        return true;
+    }
+    return false;
 }
 ?>
 <div id="wrapper-content">
@@ -26,20 +20,22 @@ if (isset($_POST['submit'])) {
                 <p class="bt">Bài làm</p>
                 <hr />
                 <div class="ex">
-                    Đề bài: Nhập vào x, n. Tính tổng biểu thức sau:<br />
-                    <img src="./images/bai3.png" alt="">
+                    Đề bài: Nhập vào 1 số nguyên, kiểm tra số đó có phải số hoàn hảo không:<br />
                 </div>
                 <p class="text-center do">Giải</p>
                 <div>
                     <form action="" method="POST">
-                        <input type="number" name="x" placeholder="Nhập x ...">
                         <input type="number" name="n" placeholder="Nhập n ...">
                         <input type="submit" name='submit' value="Submit">
                     </form>
                     <br>
-                    <p>Tổng:
+                    <p>
                         <?php if (isset($_POST['submit'])) {
-                            echo sum($x, $n);
+                            if (check((int)$_POST['n'])) {
+                                echo $_POST['n'] . ' là số hoàn hảo';
+                            } else {
+                                echo $_POST['n'] . ' không là số hoàn hảo';
+                            }
                         }
                         ?>
                     </p>

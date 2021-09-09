@@ -1,22 +1,6 @@
 <?php
 require('./inc/header.php');
 require('./lib/function_helper.php');
-$s = 0;
-
-
-function sum($x, $n)
-{
-    global $s;
-    for ($i = 1; $i <= $n; $i++) {
-        $s += (pow($x, $i)) / giaiThua($i);
-    }
-    return $s;
-}
-
-if (isset($_POST['submit'])) {
-    $x = $_POST['x'];
-    $n = $_POST['n'];
-}
 ?>
 <div id="wrapper-content">
     <div class="row">
@@ -26,20 +10,23 @@ if (isset($_POST['submit'])) {
                 <p class="bt">Bài làm</p>
                 <hr />
                 <div class="ex">
-                    Đề bài: Nhập vào x, n. Tính tổng biểu thức sau:<br />
-                    <img src="./images/bai3.png" alt="">
+                    Đề bài: Liệt kê tất cả các “ước số” của số nguyên dương n<br />
                 </div>
                 <p class="text-center do">Giải</p>
                 <div>
                     <form action="" method="POST">
-                        <input type="number" name="x" placeholder="Nhập x ...">
                         <input type="number" name="n" placeholder="Nhập n ...">
                         <input type="submit" name='submit' value="Submit">
                     </form>
                     <br>
-                    <p>Tổng:
+                    <p>
                         <?php if (isset($_POST['submit'])) {
-                            echo sum($x, $n);
+                            echo 'Ước của ' . $_POST['n'] . ' là : ';
+                            $uoc = array();
+                            $uoc = timUoc($_POST['n']);
+                            foreach ($uoc as $item) {
+                                echo $item . ', ';
+                            }
                         }
                         ?>
                     </p>
