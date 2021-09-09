@@ -11,7 +11,7 @@
                         <a href="bai2.php">Bài 2</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="">An item</a>
+                        <a href="bai3.php">Bài 3</a>
                     </li>
                     <li class="list-group-item">
                         <a href="">An item</a>

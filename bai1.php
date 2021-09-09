@@ -1,17 +1,5 @@
 <?php
 require('./inc/header.php');
-$error = array();
-$s = 0;
-if ($_POST) {
-    $n = $_POST['n'];
-    if (empty($n) || $n < 1) {
-        $error = 'Nhập lại n';
-    } else {
-        for ($i = 1; $i <= $n; $i++) {
-            $s += $i;
-        }
-    }
-}
 ?>
 <div id="wrapper-content">
     <div class="row">
@@ -21,23 +9,25 @@ if ($_POST) {
                 <p class="bt">Bài làm</p>
                 <hr />
                 <div class="ex">
-                    Đề bài: Nhập n từ bàn phím, tính tổng các số nguyên từ 1 -> n
-                    <form action="" method="POST">
-                        <input type="number" name="n" placeholder="Nhap n = ...">
-                        <button type="submit">Submit</button>
-                        <p class="text-danger">
-                            <?php if (!empty($error)) {
-                                print_r($error);
-                            } ?>
-                        </p>
-                    </form>
+                    Đề bài: In các số lẻ, số chẵn từ 1 -> 50
                 </div>
                 <p class="text-center do">Giải</p>
                 <div>
-                    <p>Tổng:
+                    <p>Dãy số lẻ:
                         <?php
-                        if (empty($error)) {
-                            echo $s;
+                        for ($i = 0; $i <= 50; $i++) {
+                            if ($i % 2 != 0) {
+                                echo $i . ", ";
+                            }
+                        }
+                        ?>
+                    </p>
+                    <p>Dãy số chẵn:
+                        <?php
+                        for ($i = 0; $i <= 50; $i++) {
+                            if ($i % 2 == 0) {
+                                echo $i . ", ";
+                            }
                         }
                         ?>
                     </p>
