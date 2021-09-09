@@ -39,12 +39,18 @@ function gtriDuong($array = array())
     return $a;
 }
 
+function convert($a)
+{
+    if ($a < 10) $a = '0' . $a;
+    return $a;
+}
+
 function validate($n)
 {
     if ($n > 0) {
-        $h = floor($n / 3600);
-        $m = floor(($n % 3600) / 60);
-        $s = $n % 60;
+        $h = convert(floor($n / 3600));
+        $m = convert(floor(($n % 3600) / 60));
+        $s = convert($n % 60);
         $result =  $h . ':' . $m . ':' . $s;
     } else {
         $result = 'Nhập lại n > 0';
