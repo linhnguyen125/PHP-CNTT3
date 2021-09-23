@@ -9,14 +9,10 @@ require('./inc/header.php');
                 <p class="bt">Bài làm</p>
                 <hr />
                 <div class="ex">
-                    <p style="font-size: 18px; font-weight: 500;">
-                        Mình bắt trước loài mèo kêu nha<br />
-                        Kêu cùng Boo Meoww Meoww Meoww Meoww<br />
-                    </p>
-                    <div class="video">
-                        <video autoplay controls>
-                            <source src="./videos/Học tiếng mèo kêu - Trần Đức Bo.mp4">
-                        </video>
+                    <div>
+                        <p>Bài tập PHP lớp CNTT3 - K59</p>
+                        <p>Họ và tên: Nguyễn Văn Linh</p>
+                        <p>Mã sinh viên:  181202589</p>
                     </div>
                 </div>
             </div>

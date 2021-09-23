@@ -14,28 +14,28 @@ require('./lib/sinhvien.php');
                 <div class="row">
                     <div class="col-md-6">
                         <h5>Login</h5>
-                        <form>
+                        <form onsubmit="return false">
                             <div class="form-group">
                                 <label for="username">Username</label>
-                                <input type="email" class="form-control form-control-sm" id="username" style="width: 250px;">
+                                <input type="text" class="form-control form-control-sm" name="username" id="username" style="width: 250px;" />
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control form-control-sm" id="password" style="width: 250px;">
+                                <input type="password" name="password" class="form-control form-control-sm" id="password" style="width: 250px;" />
                             </div>
                             <div class="form-group form-check">
                                 <input type="checkbox" class="form-check-input" id="remember">
                                 <label class="form-check-label" for="remember">Remember me</label>
                             </div>
-                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button onclick="funLogin();" type="submit" class="btn btn-primary" value="Login">Login</button>
                         </form>
                     </div>
                     <div class="col-md-6">
                         <h5>Signup For New Account</h5>
                         <form>
                             <div class="form-group">
-                                <label for="username">Username</label>
-                                <input type="email" class="form-control form-control-sm" id="username">
+                                <label for="username1">Username</label>
+                                <input type="email" class="form-control form-control-sm" id="username1">
                             </div>
                             <div class="form-group">
                                 <label for="useremail">User email</label>
@@ -66,8 +66,8 @@ require('./lib/sinhvien.php');
                                 <input type="text" class="form-control form-control-sm" id="company-name" style="width: 250px;">
                             </div>
                             <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input" id="remember">
-                                <label class="form-check-label" for="remember">I am agree with registration</label>
+                                <input type="checkbox" class="form-check-input" id="remember1">
+                                <label class="form-check-label" for="remember1">I am agree with registration</label>
                             </div>
                             <button type="submit" class="btn btn-primary">Register</button>
                         </form>
